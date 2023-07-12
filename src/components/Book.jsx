@@ -1,12 +1,20 @@
-import { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 
-const Book = () => {
-  const [book] = useState({ Bookname: 'book1', author: 'Author1' });
-  return (
-    <div>
-      <p>{book}</p>
-      <button type="button">Delete</button>
-    </div>
-  );
-};
+const Book = ({ title, author }) => (
+  <div>
+    <p>
+      {title}
+      {' '}
+      by
+      {' '}
+      {author}
+    </p>
+    <button type="button">Delete</button>
+  </div>
+);
 export default Book;
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};

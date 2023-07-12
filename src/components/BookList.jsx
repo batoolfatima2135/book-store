@@ -1,3 +1,5 @@
+import Book from './Book';
+
 const BookList = () => {
   const List = [
     {
@@ -15,15 +17,12 @@ const BookList = () => {
 
   ];
   return (
-    <ul>
-      {List.forEach((book) => {
-        <li>
-          {book.Bookname}
-          by
-          {book.author}
-        </li>;
-      })}
-    </ul>
+    <>
+      {
+        List.map((book) => <Book title={book.title} key={book.key} author={book.author} />)
+    }
+    </>
+
   );
 };
 export default BookList;
