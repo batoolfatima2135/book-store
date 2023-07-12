@@ -1,5 +1,4 @@
 import './App.css';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Routes, Route } from 'react-router-dom';
 import Home from './Routes/Home';
 import Categories from './Routes/Categories';

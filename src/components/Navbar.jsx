@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Navbar = () => (
