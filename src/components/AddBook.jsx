@@ -14,6 +14,8 @@ const AddBook = () => {
       author,
     };
     dispatch(addBook(newBook));
+    setAuther('');
+    setTitle('');
   };
   return (
     <form>
