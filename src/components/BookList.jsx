@@ -8,20 +8,24 @@ const BookList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
-  });
+  }, [dispatch]);
   return (
     <>
-      {
-       List.map((book) => (
-         <Book
-           title={book.title}
-           key={book.item_id}
-           id={book.item_id}
-           author={book.author}
-           category={book.category}
-         />
-       ))
-    }
+
+      { List
+        ? List.map((book) => (
+          <Book
+            title={book.title}
+            key={book.item_id}
+            id={book.item_id}
+            author={book.author}
+            category={book.category}
+          />
+        )) : (
+          <div>
+            <h3>No Books</h3>
+          </div>
+        )}
     </>
 
   );
