@@ -1,11 +1,13 @@
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import '../styles/BookList.css';
 
 const BookList = () => {
   const List = useSelector((state) => state.booksList.books);
   return (
     <>
-      {
+      <div className="Lesson-Panel row m-5 p-2 align-items-center justify-content-center">
+        {
        List.map((book) => (
          <Book
            title={book.title}
@@ -15,7 +17,8 @@ const BookList = () => {
            category={book.category}
          />
        ))
-    }
+}
+      </div>
     </>
 
   );
