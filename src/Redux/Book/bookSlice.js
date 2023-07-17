@@ -12,7 +12,6 @@ const initialState = {
 export const fetchBooks = createAsyncThunk('books/fetchbooks', async (thunkAPI) => {
   try {
     const response = await axios(`${baseUrl}/${appId}/books`);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue('something went wrong');
@@ -22,6 +21,7 @@ export const fetchBooks = createAsyncThunk('books/fetchbooks', async (thunkAPI) 
 export const addBook = createAsyncThunk('books/addBook', async (data, thunkAPI) => {
   try {
     const response = await axios.post(`${baseUrl}/${appId}/books`, data);
+    thunkAPI.dispatch(fetchBooks());
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue('something went wrong');
@@ -29,7 +29,8 @@ export const addBook = createAsyncThunk('books/addBook', async (data, thunkAPI) 
 });
 export const removeBook = createAsyncThunk('books/removeBook', async (id, thunkAPI) => {
   try {
-    const response = await axios.post(`${baseUrl}/${appId}/books/${id}`, id);
+    const response = await axios.delete(`${baseUrl}/${appId}/books/${id}`, id);
+    thunkAPI.dispatch(fetchBooks());
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue('something went wrong');
