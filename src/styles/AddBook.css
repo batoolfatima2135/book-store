@@ -22,7 +22,7 @@
   color: var(--white-two);
   border: none;
 }
-
-.option {
-  color: #c4c4c4 !important;
+.Remove {
+  border: none;
+  background-color: transparent;
 }
