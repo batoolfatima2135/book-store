@@ -34,7 +34,6 @@
 # 📖 BOOK STORE <a name="about-project"></a>
 
 
-
 **BOOK STORE** is a website that allows you to: Display a list of books Add a book Remove a selected book
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -52,8 +51,6 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
 
 - **Display a list of books**
 - **Add a book**
