@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import Book from './Book';
-import '../styles/BookList.css';
 
 const BookList = () => {
   const List = useSelector((state) => state.booksList.books);
