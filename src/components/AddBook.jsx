@@ -30,13 +30,22 @@ const AddBook = () => {
         <div className="row justify-content-center">
           <form>
             <div className="row align-items-center justify-content-center">
-              <div className="col-7">
+              <div className="col-4">
                 <input
                   type="text"
                   className="form-control mb-2"
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
                   placeholder="Book title"
+                />
+              </div>
+              <div className="col-3">
+                <input
+                  type="text"
+                  className="form-control mb-2"
+                  placeholder="Author"
+                  onChange={(e) => setAuther(e.target.value)}
+                  value={author}
                 />
               </div>
               <div className="col-3">
@@ -60,15 +69,6 @@ const AddBook = () => {
           </form>
         </div>
       </div>
-      <form>
-        <h1>Create New Book</h1>
-        <input
-          type="text"
-          placeholder="Author"
-          onChange={(e) => setAuther(e.target.value)}
-          value={author}
-        />
-      </form>
     </>
   );
 };

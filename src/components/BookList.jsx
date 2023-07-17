@@ -17,7 +17,7 @@ const BookList = () => {
            category={book.category}
          />
        ))
-}
+    }
       </div>
     </>
 
