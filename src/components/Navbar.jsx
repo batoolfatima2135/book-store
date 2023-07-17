@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import '../styles/nav.css';
 
 const Navbar = () => (
   <div className="container">

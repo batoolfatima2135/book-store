@@ -1,10 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import { removeBook } from '../Redux/Book/bookSlice';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Book = ({
   title, author, id, category,
 }) => {
+  const percentage = Math.floor(Math.random() * 101);
+  const chapter = Math.floor(Math.random() * 51);
   const dispatch = useDispatch();
   return (
     <>
@@ -20,9 +25,9 @@ const Book = ({
         </div>
         <div className="p-2 row ">
           <div className="col-lg-3 col-md-5">
-            <span className="Comments Text-Style-8">
+            <button type="button" className="Remove Comments Text-Style-8">
               Comments
-            </span>
+            </button>
           </div>
           <div className="col-lg-3 col-md-5">
             <button type="button" className="Remove Text-Style-8" onClick={() => dispatch(removeBook(id))}>
@@ -30,19 +35,22 @@ const Book = ({
             </button>
           </div>
           <div className="col-lg-3 col-md-4">
-            <span className="Edit Text-Style-8">
+            <button type="button" className="Remove Edit Text-Style-8">
               Edit
-            </span>
+            </button>
           </div>
         </div>
       </div>
       <div className="col-lg-4 col-md-4 col-12 row align-items-center my-4">
         <div className="col-lg-3 col-md-5 col-6">
-          <div className="Oval-2 rounded-circle"> </div>
+          <div className="d-flex align-items-center justify-content-center rounded-circle">
+            <CircularProgressbar value={percentage} />
+          </div>
         </div>
         <div className="col-lg-3 col-md-5 col-6">
           <span className="-Percent-Complete Text-Style-10">
-            64%
+            {percentage}
+            %
           </span>
           <div className="Completed Text-Style-2">
             Completed
@@ -54,7 +62,8 @@ const Book = ({
           CURRENT CHAPTER
         </div>
         <div className="Current-Lesson Text-Style-4 my-2">
-          Chapter 17
+          Chapter&nbsp;
+          {chapter}
         </div>
         <button type="button" className="Update-progress my-2 w-lg-50 w-md-75">
           UPDATE PROGRESS
