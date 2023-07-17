@@ -18,6 +18,7 @@ const AddBook = () => {
     dispatch(addBook(newBook));
     setAuther('');
     setTitle('');
+    setCategory('');
   };
   return (
     <>
