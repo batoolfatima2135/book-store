@@ -8,10 +8,11 @@
   letter-spacing: -0.18px;
   color: #888;
 }
+
 .add {
   border-radius: 3px;
   background-color: var(--azure);
-  font-family: 'RobotoSlab', sans-serif;;
+  font-family: 'RobotoSlab', sans-serif;
   font-size: 0.813rem;
   font-weight: bold;
   font-stretch: normal;
@@ -22,6 +23,7 @@
   color: var(--white-two);
   border: none;
 }
+
 .Remove {
   border: none;
   background-color: transparent;

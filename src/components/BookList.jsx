@@ -4,7 +4,6 @@ import Book from './Book';
 import { fetchBooks } from '../Redux/Book/bookSlice';
 import '../styles/BookList.css';
 
-
 const BookList = () => {
   const List = useSelector((state) => state.booksList.books);
   const dispatch = useDispatch();
